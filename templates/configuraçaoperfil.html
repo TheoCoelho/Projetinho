@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações de Perfil</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,400&family=Poppins:wght@500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif; /* Utiliza a fonte Montserrat para todo o body */
+      background-color: #f1f1f1; /* Fundo cinza claro para o body */
+    }
+
+    .profile-card {
+      border: 1px solid #ddd; /* Borda com cor cinza */
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Sombra */
+      background-color: #f9f9f9; /* Fundo cinza claro */
+      padding: 20px; /* Espaçamento interno */
+      border-radius: 10px; /* Borda arredondada */
+    }
+
+    .btn-primary {
+      background-color: #333; /* Cor de fundo preto */
+      border-color: #333; /* Cor da borda preto */
+    }
+
+    .btn-primary:hover {
+      background-color: #555; /* Cor de fundo preto mais escura no hover */
+      border-color: #555; /* Cor da borda preto mais escura no hover */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card rounded profile-card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3">
+                  <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                  <span class="font-weight-bold">Edogaru</span>
+                  <span class="text-black-50">edogaru@mail.com.my</span>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <h4 class="text-center mb-4">Configurações de Perfil</h4>
+                <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="nome">Nome</label>
+                      <input type="text" class="form-control" id="nome" placeholder="Nome">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="sobrenome">Sobrenome</label>
+                      <input type="text" class="form-control" id="sobrenome" placeholder="Sobrenome">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" placeholder="Telefone">
+                  </div>
+                  <div class="form-group">
+                    <label for="biografia">Biografia</label>
+                    <textarea class="form-control" id="biografia" rows="3" placeholder="Escreva sua biografia"></textarea>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="cidade">Cidade</label>
+                      <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="estado">Estado</label>
+                      <input type="text" class="form-control" id="estado" placeholder="Estado">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="pais">País</label>
+                    <input type="text" class="form-control" id="pais" placeholder="País">
+                  </div>
+                  <div class="text-center">
+                    <button class="btn btn-primary profile-button" type="submit">Salvar Perfil</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.cabecalho {
+  height: 100px;
+  background-color: yellow;
+  margin-left: 0%;
+}
+
+header h1 {
+  background-color: black;
+  margin-top: 0%;
+  color: white
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+#login {
+  display: flex;
+  justify-content: right;
+  margin-top: -40px;
+  color: white;
+  margin-right: 80px;
+
+
+}
+
+#cadastro {
+  display: flex;
+  justify-content: right;
+  margin-top: -17px;
+  color: white;
+}
+
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #2e86de;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilos específicos para a barra de navegação e cabeçalho */
+
+
+.page-header a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.page-header a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.navbar ul {
+    padding: 0;
+    list-style: none;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 10px;
+}
+
+/* Estilos específicos para os formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Estilos específicos para o feed de postagens */
+.feed {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.post {
+    padding: 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.interactions {
+    margin-top: 10px;
+}
+
+
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 40px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  gap: 5px
+}
+
+.areaLogin img {
+  width: 420px;
+}
+
+.formLogin h1 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.3em;
+}
+
+.formLogin p {
+  display: inline-block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.formLogin input {
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  border-radius: 4px;
+  transition: all linear 160ms;
+  outline: none;
+}
+
+
+.formLogin input:focus {
+  border: 1px solid black;
+}
+
+.formLogin label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.formLogin a {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #555;
+  transition: all linear 160ms;
+}
+
+.formLogin a:hover {
+  color: #757575;
+}
+
+.btn {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none !important;
+  transition: all linear 160ms;
+  cursor: pointer;
+  margin: 0 !important;
+
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #757575;
+
+}
+
+
+.formCadastro {
+  display: flex;
+  flex-direction: column;
+  background-color: #dc5656;
+  border-radius: 7px;
+  padding: 40px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  gap: 5px}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+/* Adições no arquivo style.css */
+
+.formCadastro {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 40px;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+  gap: 5px;
+  width: 300px; /* Defina a largura desejada para o formulário de cadastro */
+  margin: 50px auto; /* Centraliza o formulário na página */
+}
+
+.formCadastro h1 {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.3em;
+  text-align: center; /* Centraliza o título do formulário */
+}
+
+.formCadastro label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 20px; /* Adiciona espaçamento entre os campos */
+}
+
+.formCadastro input {
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  transition: all linear 160ms;
+  outline: none;
+}
+
+.formCadastro input:focus {
+  border: 1px solid black;
+}
+
+.formCadastro a {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #555;
+  transition: all linear 160ms;
+  text-align: center; /* Centraliza o link "Esqueci minha senha" */
+}
+
+.btn {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none !important;
+  transition: all linear 160ms;
+  cursor: pointer;
+  margin: 0 auto; /* Centraliza o botão "Cadastrar" */
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #757575;
+}
+

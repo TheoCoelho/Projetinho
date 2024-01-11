@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- ... (o restante do cabeçalho) ... -->
+</head>
+<body>
+
+    <h1>Feed</h1>
+
+    <div id="feed">
+        {% for post in posts %}
+            <div class="post">
+                <h3>{{ post[1] }}</h3>
+                <p>{{ post[2] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Adicionando o botão para a página de postagem -->
+    <a href="{{ url_for('postagem') }}" class="botao-circular">+</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Atualiza o feed quando uma nova postagem é recebida
+        socket.on('nova_postagem', function(data) {
+            var feed = document.getElementById('feed');
+            feed.innerHTML = '';
+
+            for (var i = 0; i < data.length; i++) {
+                var postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerHTML = '<h3>' + data[i][1] + '</h3><p>' + data[i][2] + '</p>';
+                feed.appendChild(postDiv);
+            }
+        });
+    </script>
+
+</body>
+</html>

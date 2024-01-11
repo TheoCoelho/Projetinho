@@ -1,0 +1,77 @@
+<!-- postagem.html -->
+
+<!-- postagem.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- ... (o restante do cabeçalho) ... -->
+</head>
+<body>
+
+    <h1>Fazer Postagem</h1>
+
+    <form action="/adicionar_postagem" method="post" enctype="multipart/form-data">
+        <label for="nomeUsuario">Nome do Usuário:</label>
+        <input type="text" id="nomeUsuario" name="nome_usuario" required>
+
+        <label for="legendaPostagem">Legenda da Postagem:</label>
+        <textarea id="legendaPostagem" name="legenda" rows="4" required></textarea>
+
+        <!-- Adicionando o campo de upload de imagem -->
+        <label for="imagemPost">Imagem:</label>
+        <input type="file" id="imagemPost" name="imagem_post">
+
+        <!-- Adicionando uma seção para mostrar a imagem na página de postagem -->
+        <div id="imagemPreview" style="display: none;">
+            <img id="preview" alt="Imagem de pré-visualização">
+        </div>
+
+        <button type="submit" class="botao-circular"></button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Exibe a imagem na página de postagem
+        document.getElementById('imagemPost').addEventListener('change', function () {
+            var preview = document.getElementById('preview');
+            var imagemPreview = document.getElementById('imagemPreview');
+            var file = this.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    imagemPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                imagemPreview.style.display = 'none';
+            }
+        });
+
+        // Atualiza o feed quando uma nova postagem é recebida
+        socket.on('nova_postagem', function(data) {
+            var feed = document.getElementById('feed');
+            feed.innerHTML = '';
+
+            for (var i = 0; i < data.length; i++) {
+                var postDiv = document.createElement('div');
+                postDiv.classList.add('post');
+                postDiv.innerHTML = '<h3>' + data[i][1] + '</h3><p>' + data[i][2] + '</p>';
+                
+                // Adiciona a imagem à postagem, se existir
+                if (data[i][3]) {
+                    postDiv.innerHTML += '<img src="/uploads/' + data[i][3] + '" alt="Imagem da postagem">';
+                }
+
+                feed.appendChild(postDiv);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card e Galeria de Fotos</title>
+  <!-- Link para o Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-card {
+      /* Estilos para o card do perfil */
+      text-align: center;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 600px;
+      background-color: #ffffff;
+    }
+
+    .profile-card img {
+      /* Estilos para a imagem do perfil */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    .profile-cover {
+      /* Estilos para a capa de fundo do perfil */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.5;
+      /* URL da imagem de capa */
+      background-image: url('https://via.placeholder.com/400x200');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery {
+      /* Estilos para a galeria de fotos */
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery.active {
+      /* Exibir a galeria quando estiver ativa */
+      display: grid;
+    }
+
+    .gallery img {
+      /* Estilos para as imagens da galeria */
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .tabs {
+      /* Estilos para as abas de navegação */
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    .tabs .nav-tabs {
+      /* Alinhar as abas de navegação ao centro */
+      display: flex;
+      justify-content: center;
+    }
+
+    .tabs .tab-content {
+      /* Estilos para o conteúdo das abas */
+      border: 1px solid #e9ecef;
+      border-top: none;
+      border-radius: 0 0 10px 10px;
+      padding: 20px;
+    }
+
+    .share-icon {
+      /* Estilos para o ícone de compartilhar */
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background-color: #000;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 5px 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .share-icon:hover {
+      /* Efeito de hover para o ícone de compartilhar */
+      background-color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Perfil do usuário -->
+    <div class="profile-card">
+      <div class="profile-cover"></div> <!-- Capa de fundo do perfil -->
+      <img src="https://via.placeholder.com/150" alt="Imagem do perfil"> <!-- Imagem do perfil -->
+      <h2>Nome do Usuário</h2> <!-- Nome do usuário -->
+      <p>@nomeusuario</p> <!-- Nome de usuário -->
+      <button class="share-icon"><span class="fas fa-share"></span> Compartilhar</button> <!-- Botão de compartilhar -->
+    </div>
+    <!-- Abas de navegação (Concluídos e Rascunhos) -->
+    <div class="tabs mt-4">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <!-- Aba de Concluídos -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="concluidos-tab" data-toggle="tab" href="#concluidos" role="tab"
+            aria-controls="concluidos" aria-selected="true">Concluídos</a>
+        </li>
+        <!-- Aba de Rascunhos -->
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="rascunhos-tab" data-toggle="tab" href="#rascunhos" role="tab"
+            aria-controls="rascunhos" aria-selected="false">Rascunhos</a>
+        </li>
+      </ul>
+      <!-- Conteúdo das abas -->
+      <div class="tab-content" id="myTabContent">
+        <!-- Conteúdo da aba Concluídos -->
+        <div class="tab-pane fade show active" id="concluidos" role="tabpanel" aria-labelledby="concluidos-tab">
+          <div class="gallery active">
+            <!-- Galeria de fotos dos itens concluídos -->
+            <img src="https://via.placeholder.com/150" alt="Imagem 1">
+            <img src="https://via.placeholder.com/150" alt="Imagem 2">
+            <img src="https://via.placeholder.com/150" alt="Imagem 3">
+          </div>
+        </div>
+        <!-- Conteúdo da aba Rascunhos -->
+        <div class="tab-pane fade" id="rascunhos" role="tabpanel" aria-labelledby="rascunhos-tab">
+          <div class="gallery active">
+            <!-- Galeria de fotos dos itens em rascunho -->
+            <img src="https://via.placeholder.com/150" alt="Imagem 4">
+            <img src="https://via.placeholder.com/150" alt="Imagem 5">
+            <img src="https://via.placeholder.com/150" alt="Imagem 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts do FontAwesome, jQuery e Bootstrap -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
